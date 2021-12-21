@@ -1,0 +1,108 @@
+<div class="card mb-5 mb-xl-10">
+    <div class="card-header border-0 cursor-pointer" data-bs-toggle="collapse"
+        data-bs-target="#kt_account_profile_details">
+        <div class="card-title m-0">
+            <h3 class="fw-bolder m-0">Sửa quản trị viên</h3>
+        </div>
+    </div>
+    <div id="kt_account_profile_details" class="collapse show">
+        <form id="kt_account_profile_details_form" class="form fv-plugins-bootstrap5 fv-plugins-framework"
+            novalidate="novalidate" data-form="" method="PATCH">
+            <div class="card-body border-top p-9">
+                <div class="row mb-6"> <label class="col-lg-4 col-form-label fw-bold fs-6">Avatar</label>
+                    <div class="col-lg-8">
+                        <div class="image-input image-input-outline"
+                            style="background-image: url('assets/media/avatars/blank.png');" data-kt-image-input="true">
+                            <div class="image-input-wrapper w-125px h-125px"
+                                style="background-image: url('assets/media/avatars/150-26.jpg');"> </div>
+                            <label class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow"
+                                title="" data-bs-target="#kt_modal_media_manager" data-bs-toggle="modal"
+                                data-bs-original-title="Change avatar"> <i class="fas fa-pencil-alt fs-7"></i>
+                                
+                                </label>
+                        </div>
+                        <div class="form-text">Chỉ cho phép tập tin: png, jpg, jpeg.</div>
+                    </div>
+                </div>
+                <div class="row mb-6"> <label class="col-lg-4 col-form-label required fw-bold fs-6">Tên đầy đủ</label>
+                    <div class="col-lg-8">
+                        <div class="row">
+                            <div class="col-lg-6 fv-row fv-plugins-icon-container"><input
+                                    class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" name="lastName"
+                                    type="text" value="<%= user.lastName %>" placeholder="Họ" />
+                                <div class="fv-plugins-message-container invalid-feedback"> </div>
+                            </div>
+                            <div class="col-lg-6 fv-row fv-plugins-icon-container"><input
+                                    class="form-control form-control-lg form-control-solid" name="firstName" type="text"
+                                    value="<%= user.firstName %>" placeholder="Tên" />
+                                <div class="fv-plugins-message-container invalid-feedback"> </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-6"> <label class="col-lg-4 col-form-label required fw-bold fs-6">Tài khoản</label>
+                    <div class="col-lg-8 fv-row fv-plugins-icon-container"><input
+                            class="form-control form-control-lg form-control-solid disabled bg-secondary text-dark-50" name="username" type="text"
+                            value="<%= user.userName %>" placeholder="Username" disabled />
+                        <div class="fv-plugins-message-container invalid-feedback"> </div>
+                    </div>
+                </div>
+                <div class="row mb-6"> <label class="col-lg-4 col-form-label required fw-bold fs-6">Email</label>
+                    <div class="col-lg-8 fv-row fv-plugins-icon-container"><input
+                            class="form-control form-control-lg form-control-solid disabled bg-secondary text-dark-50" name="email" type="text"
+                            value="<%= user.email %>" placeholder="Email" disabled />
+                        <div class="fv-plugins-message-container invalid-feedback"> </div>
+                    </div>
+                </div>
+                <div class="row mb-6"> <label class="col-lg-4 col-form-label fw-bold fs-6"> <span
+                            class="required">Phone</span> </label>
+                    <div class="col-lg-8 fv-row fv-plugins-icon-container"><input
+                            class="form-control form-control-lg form-control-solid" name="phone" type="tel"
+                            value="<%= user.phone %>" placeholder="Phone number" />
+                        <div class="fv-plugins-message-container invalid-feedback"> </div>
+                    </div>
+                </div>
+                <div class="row mb-6"> <label class="col-lg-4 col-form-label required fw-bold fs-6">Mật khẩu</label>
+                    <div class="col-lg-8">
+                        <div class="row">
+                            <div class="col-lg-6 fv-row fv-plugins-icon-container"><input
+                                    class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" type="password" name="currentPassword"
+                                    type="text" value="" placeholder="Mật khẩu hiện tại" />
+                                <div class="fv-plugins-message-container invalid-feedback"> </div>
+                            </div>
+                            <div class="col-lg-6 fv-row fv-plugins-icon-container"><input
+                                    class="form-control form-control-lg form-control-solid" name="password" type="password"
+                                    value="" placeholder="Mật khẩu mới" />
+                                <div class="fv-plugins-message-container invalid-feedback"> </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-6"> <label class="col-lg-4 col-form-label required fw-bold fs-6">Giới thiệu bản thân</label>
+                    <div class="col-lg-8">
+                        <div class="row">
+                            <div class="col-lg-12 fv-row fv-plugins-icon-container"><textarea
+                                    class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" name="bio"
+                                    rows="6"><%= user.bio %></textarea>
+                                <div class="fv-plugins-message-container invalid-feedback"> </div>
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>
+               
+                
+            </div>
+            <div class="card-footer d-flex justify-content-end py-6 px-9"><button
+                    class="btn btn-light btn-active-light-primary me-2" type="reset">Huỷ</button> 
+                    <button class="btn btn-primary" type="submit" data-kt-indicator>
+                    <span class="indicator-label"  >Cập nhật</span>
+                    <span class="indicator-progress">Đang xử lý...<span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+                </button>
+                    
+            </div>
+            <input type="hidden" />
+            <div> </div>
+        </form>
+    </div>
+</div>

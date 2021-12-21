@@ -1,0 +1,196 @@
+<div class="toolbar mb-5 mb-lg-7" id="kt_toolbar" data-select2-id="select2-data-kt_toolbar">
+  <div class="page-title d-flex flex-column me-3">
+    <h1 class="d-flex text-dark fw-bolder my-1 fs-3">Danh sách quản trị viên</h1>
+
+    <ul class="breadcrumb breadcrumb-dot fw-bold text-gray-600 fs-7 my-1">
+      <li class="breadcrumb-item text-gray-600">
+        <a href="../../demo14/dist/index.html" class="text-gray-600 text-hover-primary">
+          Home
+        </a>
+      </li>
+
+      <li class="breadcrumb-item text-gray-600">Quản trị</li>
+
+      <li class="breadcrumb-item text-gray-500">Danh sách quản trị viên</li>
+    </ul>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-header border-0 pt-6">
+    <div class="card-title">
+      <div class="d-flex align-items-center position-relative my-1"> <input
+          class="form-control form-control-solid w-250px ps-14" type="text" placeholder="Tìm kiếm..."
+          data-kt-user-table-filter="search" /></div>
+    </div>
+    <div class="card-toolbar">
+      <div class="d-flex justify-content-end" data-kt-user-table-toolbar="base"> 
+        
+       
+          <button class="btn btn-primary" type="button"
+          data-bs-toggle="modal" data-bs-target="#kt_modal_add_user"> Tạo tài khoản</button>
+      </div>
+      <div id="kt_modal_add_user" class="modal fade" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered mw-650px">
+          <div class="modal-content">
+            <div id="kt_modal_add_user_header" class="modal-header">
+              <h2 class="fw-bolder">Tạo tài khoản</h2>
+              <div class="btn btn-icon btn-sm btn-active-icon-primary" data-bs-dismiss="modal"><i class="fas fa-times fs-1"></i></div>
+            </div>
+            <div class="modal-body scroll-y mx-2 mx-xl-7 my-7">
+              <form  class="form fv-plugins-bootstrap5 fv-plugins-framework" novalidate="novalidate" action="" method="POST" data-form="onCreate">
+                <div class="fv-row mb-10">
+                  <label class="form-label fs-6 fw-bolder text-dark">Tài khoản</label>
+                  <input class="form-control form-control-lg form-control-solid" type="text" name="username" value=""
+                      autocomplete="off"
+                      data-fv-not-empty="true"
+                      data-fv-not-empty___message="Tài khoản không để trống"
+                      data-fv-string-length="true"
+                      />
+                </div>
+                <div class="fv-row mb-10">
+                  <div class="row">
+                    <div class="col-12 col-md-6">
+                    <label class="form-label fs-6 fw-bolder text-dark">Họ</label>
+                    <input class="form-control form-control-lg form-control-solid" type="text" name="lastname" value=""
+                        autocomplete="off"
+                        data-fv-not-empty="true"
+                        data-fv-not-empty___message="Họ không để trống"
+                        data-fv-string-length="true"
+                        />
+                      </div>
+                      <div class="col-12 col-md-6">
+                        <label class="form-label fs-6 fw-bolder text-dark">Tên</label>
+                        <input class="form-control form-control-lg form-control-solid" type="text" name="firstname" value=""
+                            autocomplete="off"
+                            data-fv-not-empty="true"
+                            data-fv-not-empty___message="Tên không để trống"
+                            data-fv-string-length="true"
+                            />
+                          </div>
+                    </div>
+                </div>
+                <div class="fv-row mb-10">
+                  <label class="form-label fs-6 fw-bolder text-dark">Email</label>
+                  <input class="form-control form-control-lg form-control-solid" type="text" name="email" value=""
+                      autocomplete="off"
+                      data-fv-not-empty="true"
+                      data-fv-not-empty___message="Email không để trống"
+                      data-fv-string-length="true"
+                      />
+                </div>
+                <div class="fv-row mb-10">
+                  <label class="form-label fs-6 fw-bolder text-dark">Phone</label>
+                  <input class="form-control form-control-lg form-control-solid" type="text" name="phone" value=""
+                      autocomplete="off"
+                      data-fv-not-empty="true"
+                      data-fv-not-empty___message="Số điện không để trống"
+                      data-fv-string-length="true"
+                      />
+                </div>
+                <div class="fv-row mb-10">
+                  <label class="form-label fs-6 fw-bolder text-dark">Password</label>
+                  <input class="form-control form-control-lg form-control-solid" type="text" name="password" value=""
+                      autocomplete="off"
+                      data-fv-not-empty="true"
+                      data-fv-not-empty___message="Mật khẩu không để trống"
+                      data-fv-string-length="true"
+                      />
+                </div>
+
+                <div class="d-flex flex-column mb-7 fv-row">
+              
+                  <label class="fs-6 fw-bold mb-2">
+                    <span>Phân quyền</span>
+                    <i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" title="Chọn phân quyền"></i>
+                  </label>
+                  <select name="role" aria-label="Chọn quyền" data-control="select2" data-placeholder="Chọn quyền..." class="form-select form-select-solid" >
+                    <option value="">Chọn quyền...</option>                  
+                    <option value="admin">Administrator</option>
+                    <option value="editor">Editor</option>
+                  </select>
+                </div>
+             
+
+                <div class="text-right">
+                  <button type="reset" class="btn btn-light me-3" data-bs-dismiss="modal">Huỷ</button>
+                  <button type="submit" id="kt_sign_in_submit" class="btn btn-lg btn-primary" data-kt-indicator>
+                      <span class="indicator-label">Tạo</span>
+                      <span class="indicator-progress"><span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+                  </button>
+              </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card-body pt-0">
+    <div class="dataTables_wrapper dt-bootstrap4 no-footer">
+      <div class="table-responsive">
+        <table id="kt_table_users" class="table align-middle table-row-dashed fs-6 gy-5 dataTable no-footer">
+          <thead>
+            <tr class="text-start text-muted fw-bolder fs-7 text-uppercase gs-0">
+              <th class="w-10px pe-2 sorting_disabled" style="width: 29.25px;" colspan="1" rowspan="1">
+                <div class="form-check form-check-sm form-check-custom form-check-solid me-3"><input
+                    class="form-check-input" type="checkbox" value="1" data-kt-check="true"
+                    data-kt-check-target="#kt_table_users .form-check-input" /></div>
+              </th>
+              <th class="min-w-125px sorting" style="width: 224.938px;" tabindex="0" colspan="1" rowspan="1">Tài khoản</th>
+              <th class="min-w-125px sorting" style="width: 125px;" tabindex="0" colspan="1" rowspan="1">Quyền</th>
+              <th class="min-w-125px sorting" style="width: 125px;" tabindex="0" colspan="1" rowspan="1">Phone</th>
+              <th class="min-w-125px sorting" style="width: 125px;" tabindex="0" colspan="1" rowspan="1">Đăng nhập gần nhất</th>
+              </th>
+              <th class="text-end min-w-100px sorting_disabled" style="width: 100px;" colspan="1" rowspan="1">Thao tác
+              </th>
+            </tr>
+          </thead>
+          <tbody class="text-gray-600 fw-bold ">
+            <% results.forEach((user) => { %>
+               <tr class="odd">
+              <td>
+                <div class="form-check form-check-sm form-check-custom form-check-solid"><input class="form-check-input"
+                    type="checkbox" value="<%= user._id %>" /></div>
+              </td>
+              <td class="d-flex align-items-center">
+                <div class="symbol symbol-circle symbol-50px overflow-hidden me-3">
+                  <a href="/admin/administrator/edit/<%= user._id %>">
+                  <div class="symbol-label">
+                    <% if(user.avatar) { %> 
+                    <img class="w-100" src="<%= user.avatar %>" alt="<%= user.firstName %>" />
+                    <% }else{ %> 
+                      <div class="symbol-label fs-3 bg-light-danger text-danger"><%= user.firstName.substring(0,1).toUpperCase()%></div>
+                      <% } %> 
+                  </div>
+                  </a>
+                </div>
+                <div class="d-flex flex-column"><a class="text-gray-800 text-hover-primary mb-1"
+                    href="/admin/administrator/edit/<%= user._id %>"><%= user.lastName %> <%= user.firstName %></a><%= user.email %>
+                </div>
+              </td>
+              <td><span class="badge bg-light-success text-success"><%= user.role.name %></span></td>
+              <td> <%= user.phone %> </td>
+              <td data-order="<%= moment(user.lastLogin).format() %>">
+                <small class="fw-bolder text-muted"><%= moment(user.lastLogin).format('DD-MM-YYYY hh:mm:ss') %></small>
+              </td>
+              <td class="text-end">
+                <a class="badge bg-light-primary text-primary" href="#"><i class="fas fa-pencil-alt text-primary"></i></a>
+                <a class="badge bg-light-danger text-danger" href="#" data-request="" data-method="DELETE" data-params="id:<%= user._id %>" data-confirm="Bạn có chắc chắn xoá ?"><i class="fas fa-trash text-danger"></i></a>
+              </td>
+            </tr>
+             <% }); %>
+           
+            
+          </tbody>
+        </table>
+      </div>
+      <div class="row">
+        
+        <div class="col-sm-12  d-flex align-items-center justify-content-end justify-content-md-end">
+          <%- include('../partials/pagination',{pages:pages,current:current}) %> 
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

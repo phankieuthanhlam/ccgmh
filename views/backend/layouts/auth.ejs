@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <base href="<%= baseUrl %>">
+    <title><%= title %></title>
+    
+    <link rel="shortcut icon" href="backend/assets/images/logo-s.svg" />
+  
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
+    
+    <link href="backend/assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
+    <link href="backend/assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
+</head>
+
+
+<body id="kt_body" class="bg-body">
+    
+    <div class="d-flex flex-column flex-root">
+       <%- body %>
+    </div>
+   
+    <script>var hostUrl = "backend/assets/";</script>
+   
+    <script src="backend/assets/plugins/global/plugins.bundle.js"></script>
+    <script src="backend/assets/js/scripts.bundle.js"></script>
+    <script src="backend/assets/js/custom.js"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+        <base href="http://localhost:3000">
+		<title><%= title%></title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <%- meta %>
+		<link rel="shortcut icon" href="backend/assets/images/logo-s.svg" />
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
+		<link href="backend/assets/plugins/custom/fullcalendar/fullcalendar.bundle.css" rel="stylesheet" type="text/css" />
+		<link href="backend/assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
+		<link href="backend/assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
+        <%- style %>
+	</head>
+   
+
+<body id="kt_body" class="header-fixed header-tablet-and-mobile-fixed">
+    <div class="d-flex flex-column flex-root">        
+        <div class="page d-flex flex-row flex-column-fluid">            
+            <div class="wrapper d-flex flex-column flex-row-fluid" id="kt_wrapper">                
+                <%- include('../partials/header') %>                
+                <div class="d-flex flex-column-fluid">   
+                    <%- include('../partials/sidebar') %>              
+                    <div class="d-flex flex-column flex-column-fluid container-fluid">                       
+                        <div class="content flex-column-fluid" id="kt_content">
+                            <%- body %>
+                        </div>                       
+                        <%- include('../partials/footer') %>                        
+                    </div>                    
+                </div>                
+            </div>           
+        </div>        
+    </div>
+    <%- include('../partials/uploader') %>
+    <script>var hostUrl = "backend/assets/";</script>
+   
+    <script src="backend/assets/plugins/global/plugins.bundle.js"></script>
+    <script src="backend/assets/js/scripts.bundle.js"></script>
+    <script src="backend/assets/js/custom.js"></script>
+    <%- script %>
+</body>
+</html>
